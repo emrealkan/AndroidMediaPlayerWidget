@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ecosia.ecosia">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ecosia_wallpaper"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <receiver android:name=".EcosiaWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.ecosia.ecosia.EcosiaWidgetProvider.ACTION_WIDGET_START" />
+                <action android:name="com.ecosia.ecosia.EcosiaWidgetProvider.ACTION_WIDGET_STOP" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/ecosia_widget_info" />
+        </receiver>
+    </application>
+
+</manifest>
